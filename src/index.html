@@ -14,19 +14,24 @@
   <!-- YOUR HTML -->
   <form>
     <label for="todo-text">What is your To Do?</label>
-      <input type="text" id="todo-text" autofocus>
+    <input type="text" id="todo-text" autofocus>
+
+    <input type="time" id="time-spec">
+    <label for="time-spec"></label>
       <button id="create-btn" disabled>create</button>
   </form>
   <form id="priority-form">
     <input type="radio" class= priority name="priority" id="priority1" value="1">
     <label for="priority1">Low</label><br>
+
     <input type="radio" class= priority name="priority" id="priority2" value="2">
     <label for="priority2">Medium</label><br>
+
     <input type="radio" class= priority name="priority" id="priority3" value="3">
     <label for="priority3">Heigh</label>
     
   </form>
-  <p> You Do list:</p>
+  <p> Your TODO list:</p>
   <ol id="ul-element">
   </ol>
   

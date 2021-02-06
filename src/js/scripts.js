@@ -17,14 +17,13 @@ CreateButton.addEventListener("click", event => {
 
     let ResetElement = document.createElement("button");
     ResetElement.textContent = "Delete"
-
     ResetElement.style.cursor = "pointer";
 
-    let dateElement = document.createElement("input");
-    dateElement.type = "time";
+    let dateElement = document.getElementById("time-spec");
+    console.log(dateElement.value);
 
     //list todos
-    liElement.append(dateElement, ResetElement);
+    liElement.append(dateElement.value, ResetElement);
 
 
     //priority
@@ -32,8 +31,7 @@ CreateButton.addEventListener("click", event => {
     let PriorityForm = document.getElementById("priority-form");
 
     PriorityForm.addEventListener("click", event => {
-        console.log(event);
-        console.log(event.target.value);
+
         switch (event.target.value) {
             case "1":
                 let LowElement = document.createElement("h6").innerText = "Low";
