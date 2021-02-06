@@ -6,7 +6,7 @@ console.log("Console log works!");
 let InputElement = document.getElementById("todo-text");
 let CreateButton = document.getElementById("create-btn");
 
-// create and remove list items
+// create and remove list items, due date
 
 CreateButton.addEventListener("click", event =>{
     event.preventDefault();
@@ -14,15 +14,29 @@ CreateButton.addEventListener("click", event =>{
     document.body.append(liElement);
     liElement.innerText=InputElement.value;
 
-    let buttonElement = document.createElement("button")
-    buttonElement.textContent="Delete"
-    liElement.append(buttonElement);
-    buttonElement.addEventListener("click", function (){
+    let ResetElement = document.createElement("button");
+   ResetElement.textContent="Delete"
+    liElement.append(ResetElement);
+    ResetElement.style.cursor="pointer";
+
+    let dateElement = document.createElement("input");
+    dateElement.type="time";
+    document.body.append(dateElement);
+
+
+
+
+
+
+    // localStorage.setItem("Do list", JSON.stringify(liElement.innerText));
+
+    ResetElement.addEventListener("click", function (){
         liElement.remove();
     })
+
 })
 
-//keyup event +Createbutton available
+//keyup event + Createbutton available
 
 InputElement.addEventListener("keydown", event =>{
     if(event.target.value.length < 6){
@@ -32,9 +46,4 @@ InputElement.addEventListener("keydown", event =>{
         CreateButton.removeAttribute("disabled");
         }
 })
-
-
-
-
-
 
