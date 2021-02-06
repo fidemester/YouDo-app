@@ -14,4 +14,15 @@ CreateButton.addEventListener("click", event =>{
     document.body.append(liElement);
     liElement.innerText=InputElement.value;
 
+    let buttonElement = document.createElement("button")
+    buttonElement.textContent="Delete"
+    liElement.append(buttonElement);
+    console.log(buttonElement);
+    buttonElement.addEventListener("click", function (){
+        liElement.remove();
+    })
 })
+
+
+
+
