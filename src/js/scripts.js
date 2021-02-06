@@ -20,7 +20,11 @@ CreateButton.addEventListener("click", event => {
     ResetElement.style.cursor = "pointer";
 
     let dateElement = document.getElementById("time-spec");
-    console.log(dateElement.value);
+
+    // Refresh
+    let myLocalStorage =window.localStorage.setItem("ToDo", liElement.innerText);
+    let SessionArray= [""];
+        SessionArray.push(liElement.innerText);
 
     //list todos
     liElement.append(dateElement.value, ResetElement);
@@ -66,6 +70,3 @@ InputElement.addEventListener("keydown", event => {
         CreateButton.removeAttribute("disabled");
     }
 })
-
-
-
